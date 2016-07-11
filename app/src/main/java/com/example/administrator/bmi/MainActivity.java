@@ -59,24 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         //之前要输入体重与身高参数
         Intent intent = new Intent(this, ResultActivity.class);     // 构建意图
-        intent.putExtra("Result_BMI",bmi);                          // 丢入数据
+
+        Bundle bag = new Bundle();                                  // 构建空包
+        bag.putFloat("Result_BMI",bmi);                             // bmi入包
+        bag.putString("Test_STR","哥是Intent传来的数据包。");         // 信息入包
+        intent.putExtras(bag);                                      // 开始打包
+
         startActivity(intent);                                      // 发送意图
-
-        //调出第2个Actuvity，出显示结果
-
-        //Log.d("BMI", String.valueOf(bmi));
-
-        //Toast.makeText(this, "您的BMI值是："+String.valueOf(bmi), Toast.LENGTH_SHORT).show();
-        /*toast=Toast.makeText(this, "您的BMI值是："+String.valueOf(bmi), Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER_VERTICAL,0,450);    //y方向(向下)偏移450
-        toast.show();*/
-
-        //使用对话框(AlertDialog)输出结果
-        /*new AlertDialog.Builder(this)
-                .setMessage(bmi+"")
-                .setTitle("亲的BMI值")
-                .setNegativeButton("取消", null)
-                .setPositiveButton("确定", null)
-                .show();*/
     }
 }
