@@ -6,4 +6,6 @@
     <string name="btn1">BMI计算</string>
     <string name="btn2">关于</string>
 
+    <string name="show1">你启动了我，还一笑而过。</string>
+
 </resources>

@@ -1,10 +1,9 @@
 package com.example.administrator.bmi;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
         float bmi = weight / (height*height);
 
+        //之前要输入体重与身高参数
+        Intent intent = new Intent(this, ResultActivity.class); // 当前Activity到ResultActivity
+        startActivity(intent);                                  // 启动意图
+
+        //调出第2个Actuvity，出显示结果
+
         //Log.d("BMI", String.valueOf(bmi));
 
         //Toast.makeText(this, "您的BMI值是："+String.valueOf(bmi), Toast.LENGTH_SHORT).show();
@@ -66,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
         toast.show();*/
 
         //使用对话框(AlertDialog)输出结果
-        new AlertDialog.Builder(this)
+        /*new AlertDialog.Builder(this)
                 .setMessage(bmi+"")
                 .setTitle("亲的BMI值")
                 .setNegativeButton("取消", null)
                 .setPositiveButton("确定", null)
-                .show();
+                .show();*/
     }
 }
