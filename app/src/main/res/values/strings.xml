@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BMI</string>
+
+    <string name="weight">体重</string>
+    <string name="height">身高</string>
+    <string name="btn1">BMI计算</string>
+    <string name="btn2">关于</string>
+
+</resources>
