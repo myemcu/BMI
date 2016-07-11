@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
         float bmi = weight / (height*height);
 
         //之前要输入体重与身高参数
-        Intent intent = new Intent(this, ResultActivity.class); // 当前Activity到ResultActivity
-        startActivity(intent);                                  // 启动意图
+        Intent intent = new Intent(this, ResultActivity.class);     // 构建意图
+        intent.putExtra("Result_BMI",bmi);                          // 丢入数据
+        startActivity(intent);                                      // 发送意图
 
         //调出第2个Actuvity，出显示结果
 
