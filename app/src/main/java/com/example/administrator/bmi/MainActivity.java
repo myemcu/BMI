@@ -60,9 +60,16 @@ public class MainActivity extends AppCompatActivity {
         //之前要输入体重与身高参数
         Intent intent = new Intent(this, ResultActivity.class);     // 构建意图
 
+        //光标旋停，按Alt+Enter抽取待传递的字符串
         Bundle bag = new Bundle();                                  // 构建空包
-        bag.putFloat("Result_BMI",bmi);                             // bmi入包
-        bag.putString("Test_STR","哥是Intent传来的数据包。");         // 信息入包
+
+        //抽取前(相应的收方Activity的也要改)
+        //bag.putFloat("BMI结果",bmi);                                 // bmi入包
+        //bag.putString("传送信息","哥是MainActivity传来的数据包。");    // 信息入包
+
+        bag.putFloat(getString(R.string.result_bmi),bmi);                                 // bmi入包
+        bag.putString(getString(R.string.message), getString(R.string.str));    // 信息入包
+
         intent.putExtras(bag);                                      // 开始打包
 
         startActivity(intent);                                      // 发送意图

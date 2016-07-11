@@ -8,4 +8,8 @@
 
     <string name="show1">你启动了我，还一笑而过。</string>
 
+    <string name="result_bmi">BMI结果</string>
+    <string name="message">传送信息</string>
+    <string name="str">哥就是主活动传来的数据包。</string>
+
 </resources>

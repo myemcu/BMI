@@ -19,8 +19,8 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle bag = this.getIntent().getExtras();        // 取得Intent包
 
-        bmi=bag.getFloat("Result_BMI", 0);                // 取浮点数
-        str=bag.getString("Test_STR", null);              // 取字符串
+        bmi=bag.getFloat(getString(R.string.result_bmi), 0);                // 取浮点数
+        str=bag.getString(getString(R.string.message), null);              // 取字符串
 
         //--------------------------------------------------------------
 
