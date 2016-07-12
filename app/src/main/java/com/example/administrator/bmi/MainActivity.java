@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+
         setContentView(R.layout.main);
 
         // 获取两个编辑框和最后一个按钮对象
@@ -73,5 +76,50 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(bag);                                      // 开始打包
 
         startActivity(intent);                                      // 发送意图
+    }
+
+    //-使用Callback方法观察Activity生理周期------------------------------------------
+    //-空白处Ctrl+O----------------------------------------------------------------
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Toast.makeText(this, R.string.stop, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Toast.makeText(this, R.string.destroy, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Toast.makeText(this, R.string.pause, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Toast.makeText(this, R.string.resume, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Toast.makeText(this, R.string.start, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Toast.makeText(this, R.string.restart, Toast.LENGTH_SHORT).show();
     }
 }
